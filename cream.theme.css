@@ -1,0 +1,92 @@
+/**
+ * @name cream
+ * @author loli
+ * @version 0.1.1
+ * @description A super cute, cream-colored theme for fast typing and happy vibes.
+ */
+
+/* hi im loli! 👋 
+   Open this in Notepad++ to see the colors!
+*/
+
+:root {
+    /* --- palette
+    /* picked palette customize it if u want but make sure it contrasts :)! */
+    --gold-foil: #e1c66d;    /* bright gold for highlights */
+    --cream-paper: #fffdd0;  /* the main "cream" paper color */
+    --tan-sand: #ddc7a1;     /* soft darker tan for sidebars */
+    --txt-ink: #4a3b2a;      /* dark brown ink (easier on eyes than black) */
+    
+    /* --- 🧸 cute settins --- */
+    --rounded-corners: 25px; /* Makes everything look soft and bubble-like */
+    --font-primary: "Comic Sans MS", "Comic Sans", cursive; /* the best font! */
+}
+
+/* --- 🖥️ THE BIG FIX --- */
+/* This forces the background to be cream even if Discord tries to stay dark */
+html, body, #app-mount, 
+[class^="appMount_"], [class^="app_"], [class^="bg_"],
+[class^="container_"], [class^="notAppAsidePanel_"], [class^="base_"] {
+    background-color: var(--cream-paper) !important;
+    background: var(--cream-paper) !important;
+    font-family: var(--font-primary) !important;
+}
+
+/* --- 📜 sidebar (channel list) --- */
+/* using the darker tan here so the main chat pops out */
+[class^="sidebar_"], [class^="privateChannels_"], [class^="panels_"] {
+    background-color: var(--tan-sand) !important;
+    border-top-right-radius: var(--rounded-corners);
+    border-bottom-right-radius: var(--rounded-corners);
+}
+
+/* --- 💬 chats --- */
+/* typewriting :)! */
+[class^="chat_"], [class^="container_"], [class^="chatContent_"], [class^="messagesWrapper_"] {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* --- 🫧 cute message bubbles --- */
+/* this makes messages look like little sticky notes */
+[class^="message_"] {
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    border-left: 4px solid var(--gold-foil); /* A tiny gold strip on the side */
+}
+
+/* --- ⌨️ typing box --- */
+/* where the magic happens. i made it look soft! */
+[class^="channelTextArea_"] {
+    background-color: #ffffff !important;
+    border-radius: var(--rounded-corners);
+    border: 2px solid var(--gold-foil) !important; /* gold border for the gold typists */
+}
+
+/* --- 🔤 font palette --- */
+/* fixed the 'txt-ink' variable so it actually reads the brown color! */
+[class^="markup_"], [class^="contents_"] {
+    color: var(--txt-ink) !important;
+    font-weight: bold; /* comic sans looks pritti in bold! */
+}
+
+/* --- 🏁 Black & White Character Accent --- */
+/* Your character is B&W, so let's make the Home button match! */
+[class^="childWrapper_"] svg {
+    color: #000000 !important;
+    filter: drop-shadow(0 0 2px #ffffff);
+}
+
+/* --- ✨ hover effects --- */
+/* when you hover over a channel, it turns gold */
+[class^="wrapper_"]:hover [class^="content_"] {
+    background-color: var(--gold-foil) !important;
+    color: white !important;
+}
+
+/* 🔧 modding tip :):
+   If it's STILL dark, go to Discord Settings -> Appearance 
+   and make sure "Light Mode" is selected. This theme is built 
+   to 'paint over' Light Mode way better than Dark Mode!
+*/
