@@ -4,7 +4,7 @@ A super cute, cream-colored Vencord/BetterDiscord theme designed for fast typing
 
 ## ✨ Features
 * **Cozy Palette:** Soft `cream-paper` background with `gold-foil` accents.
-* **Ink Typography:** Uses `txt-ink` (#4a3b2a) which is a dark brown that’s much easier on the eyes than pure black.
+* **Ink Typography:** Uses `text-ink` (#4a3b2a) which is a dark brown that’s much easier on the eyes than pure black.
 * **Sticky Note Messages:** Chat bubbles that look like semi-transparent notes.
 * **Soft UI:** Rounded corners (25px) for a bubbly, modern feel.
 * **Font:** Forced **Comic Sans MS** (Bold) for the ultimate "handwritten notebook" aesthetic.
