@@ -1,50 +1,46 @@
 /**
  * @name espresso-cream
  * @author loli
- * @version 1.0.0
- * @description The dark-roast version of Cream. For late-night nerdy grinding.
- * @license GPL-3.0
+ * @version 1.0.1
+ * @description Dark-roast cream that actually works in Dark Mode!
  */
 
 /* hi im loli! 👋 
-   This is the darker 'Espresso' version of my theme.
-   Perfect for when the light cream is too bright!
+   I added the 'Dark Mode Hijack' so this works even if 
+   your Discord is set to Dark or Midnight!
 */
 
 :root {
-    /* --- dark palette --- */
-    --gold-foil: #c5a854;    /* slightly deeper gold */
-    --espresso-base: #2c241a; /* dark coffee bean color */
-    --dark-roast: #1e1811;   /* even darker for sidebars */
-    --txt-paper: #fffdd0;    /* the original cream color, now as text! */
-    
-    /* --- 🧸 cute settins --- */
-    --rounded-corners: 25px; 
+    --gold-foil: #c5a854;
+    --espresso-base: #2c241a;
+    --dark-roast: #1e1811;
+    --txt-paper: #fffdd0;
+    --rounded-corners: 25px;
     --font-primary: "Comic Sans MS", "Comic Sans", cursive;
+
+    /* --- THE DARK MODE HIJACK --- */
+    /* This forces Discord's internal dark variables to use your colors */
+    --background-primary: var(--espresso-base) !important;
+    --background-secondary: var(--dark-roast) !important;
+    --background-secondary-alt: var(--dark-roast) !important;
+    --background-tertiary: var(--dark-roast) !important;
+    --header-primary: var(--txt-paper) !important;
+    --text-normal: var(--txt-paper) !important;
 }
 
-/* --- 🖥️ app bg --- */
-/* dark and cozy */
-[class^="appMount_"], body {
+/* Force the font and base bg */
+#app-mount, body {
     background-color: var(--espresso-base) !important;
     font-family: var(--font-primary) !important;
 }
 
-/* --- 📜 sidebar --- */
-/* dark roast for the sidebars */
-[class^="sidebar_"], [class^="privateChannels_"], [class^="panels_"] {
+/* Sidebar with your rounded corners */
+[class^="sidebar_"] {
     background-color: var(--dark-roast) !important;
-    border-top-right-radius: var(--rounded-corners);
-    border-bottom-right-radius: var(--rounded-corners);
+    border-radius: 0 var(--rounded-corners) var(--rounded-corners) 0;
 }
 
-/* --- 💬 chats --- */
-[class^="chat_"], [class^="container_"], [class^="chatContent_"] {
-    background-color: transparent !important;
-}
-
-/* --- 🫧 dark message bubbles --- */
-/* reverse sticky notes! */
+/* Sticky Note Messages */
 [class^="message_"] {
     background-color: rgba(0, 0, 0, 0.3) !important;
     border-radius: 15px;
@@ -52,24 +48,14 @@
     border-left: 4px solid var(--gold-foil);
 }
 
-/* --- ⌨️ typing box --- */
+/* Typing Box Fix */
 [class^="channelTextArea_"] {
     background-color: var(--dark-roast) !important;
-    border-radius: var(--rounded-corners);
     border: 2px solid var(--gold-foil) !important;
 }
 
-/* --- 🔤 font palette --- */
-/* fixed the variable so the light cream text pops on the dark bg! */
-[class^="markup_"], [class^="contents_"] {
-    color: var(--txt-paper) !important;
-    font-weight: bold;
-}
-
-/* --- 🏁 Black & White Character Accent --- */
-/* Keeping it sharp for the B&W character! */
+/* Black & White Character Accent */
 [class^="childWrapper_"] svg {
-    color: #ffffff !important;
-    filter: drop-shadow(0 0 2px #000000);
+    color: #ffffff !important; /* White icon for the dark mode */
+    filter: drop-shadow(0 0 2px #000000); /* Black shadow */
 }
-/*i think it doesnt work so help me fix it and btw Cream (normal theme) onlyy works in Light mode :(
