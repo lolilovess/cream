@@ -1,0 +1,74 @@
+/**
+ * @name espresso-cream
+ * @author loli
+ * @version 1.0.0
+ * @description The dark-roast version of Cream. For late-night nerdy grinding.
+ * @license GPL-3.0
+ */
+
+/* hi im loli! 👋 
+   This is the darker 'Espresso' version of my theme.
+   Perfect for when the light cream is too bright!
+*/
+
+:root {
+    /* --- dark palette --- */
+    --gold-foil: #c5a854;    /* slightly deeper gold */
+    --espresso-base: #2c241a; /* dark coffee bean color */
+    --dark-roast: #1e1811;   /* even darker for sidebars */
+    --txt-paper: #fffdd0;    /* the original cream color, now as text! */
+    
+    /* --- 🧸 cute settins --- */
+    --rounded-corners: 25px; 
+    --font-primary: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+/* --- 🖥️ app bg --- */
+/* dark and cozy */
+[class^="appMount_"], body {
+    background-color: var(--espresso-base) !important;
+    font-family: var(--font-primary) !important;
+}
+
+/* --- 📜 sidebar --- */
+/* dark roast for the sidebars */
+[class^="sidebar_"], [class^="privateChannels_"], [class^="panels_"] {
+    background-color: var(--dark-roast) !important;
+    border-top-right-radius: var(--rounded-corners);
+    border-bottom-right-radius: var(--rounded-corners);
+}
+
+/* --- 💬 chats --- */
+[class^="chat_"], [class^="container_"], [class^="chatContent_"] {
+    background-color: transparent !important;
+}
+
+/* --- 🫧 dark message bubbles --- */
+/* reverse sticky notes! */
+[class^="message_"] {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    border-left: 4px solid var(--gold-foil);
+}
+
+/* --- ⌨️ typing box --- */
+[class^="channelTextArea_"] {
+    background-color: var(--dark-roast) !important;
+    border-radius: var(--rounded-corners);
+    border: 2px solid var(--gold-foil) !important;
+}
+
+/* --- 🔤 font palette --- */
+/* fixed the variable so the light cream text pops on the dark bg! */
+[class^="markup_"], [class^="contents_"] {
+    color: var(--txt-paper) !important;
+    font-weight: bold;
+}
+
+/* --- 🏁 Black & White Character Accent --- */
+/* Keeping it sharp for the B&W character! */
+[class^="childWrapper_"] svg {
+    color: #ffffff !important;
+    filter: drop-shadow(0 0 2px #000000);
+}
