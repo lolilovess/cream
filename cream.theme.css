@@ -1,94 +1,77 @@
 /**
  * @name cream
  * @author loli
- * @version 0.1.1
- * @description A super cute, cream-colored theme for fast typing and happy vibes.
- * @repo https://github.com/lolilovess/cream
+ * @version 2.2.2
+ * @description cozy paper aesthetic. bold comic sans. handmade with love.
+ * @license GPL-3.0
  */
 
 /* hi im loli! 👋 
-   Open this in Notepad++ to see the colors!
+   just working on some crochet projects. 🧶
+   this code is like a perfect stitch—no mistakes, no "trash" whites. 🍦
+   relaxed paper vibes only. keep it cute. 🏁
 */
 
 :root {
-    /* --- palette
-    /* picked palette customize it if u want but make sure it contrasts :)! */
-    --gold-foil: #e1c66d;    /* bright gold for highlights */
-    --cream-paper: #fffdd0;  /* the main "cream" paper color */
-    --tan-sand: #ddc7a1;     /* soft darker tan for sidebars */
-    --txt-ink: #4a3b2a;      /* dark brown ink (easier on eyes than black) */
-    
-    /* --- 🧸 cute settins --- */
-    --rounded-corners: 25px; /* Makes everything look soft and bubble-like */
-    --font-primary: "Comic Sans MS", "Comic Sans", cursive; /* the best font! */
+  /* --- 🧶 the crochet palette --- */
+  --paper-main: #f3efe0;       /* warm ivory wool */
+  --paper-side: #e6e1cf;       /* soft parchment sidebars */
+  --ink-bold: #3a352f;         /* thick dark thread for text */
+  --gold-seal: #d4af37;        /* a shiny gold crochet hook accent */
+  
+  /* --- 🧸 cozy settings --- */
+  --rounded-pro: 18px;         /* soft rounded edges */
+  --font-main: "Comic Sans MS", "Comic Sans", cursive;
+
+  /* --- 🧪 anti-malfunction knit --- */
+  /* forcing the cream even if the platform tries to be blue! */
+  --background-primary: var(--paper-main) !important;
+  --background-secondary: var(--paper-side) !important;
+  --background-secondary-alt: var(--paper-side) !important;
+  --background-tertiary: var(--paper-side) !important;
+  --header-primary: var(--ink-bold) !important;
+  --text-normal: var(--ink-bold) !important;
+  --interactive-normal: var(--ink-bold) !important;
+  --brand-experiment: var(--gold-seal) !important;
 }
 
-/* --- 🖥️ THE BIG FIX --- */
-/* This forces the background to be cream even if Discord tries to stay dark */
-html, body, #app-mount, 
-[class^="appMount_"], [class^="app_"], [class^="bg_"],
-[class^="container_"], [class^="notAppAsidePanel_"], [class^="base_"] {
-    background-color: var(--cream-paper) !important;
-    background: var(--cream-paper) !important;
-    font-family: var(--font-primary) !important;
+/* --- 🖥️ global comic sans energy --- */
+/* bold and carefree, just like a handmade project */
+* {
+  font-family: var(--font-main) !important;
+  font-weight: 800 !important;
 }
 
-/* --- 📜 sidebar (channel list) --- */
-/* using the darker tan here so the main chat pops out */
-[class^="sidebar_"], [class^="privateChannels_"], [class^="panels_"] {
-    background-color: var(--tan-sand) !important;
-    border-top-right-radius: var(--rounded-corners);
-    border-bottom-right-radius: var(--rounded-corners);
+/* --- 🏁 black & white icon aesthetic --- */
+/* matching my black and white character perfectly */
+[class^="homeIcon_"] {
+  filter: grayscale(100%) brightness(0.7);
+  color: #000000 !important;
 }
 
-/* --- 💬 chats --- */
-/* typewriting :)! */
-[class^="chat_"], [class^="container_"], [class^="chatContent_"], [class^="messagesWrapper_"] {
-    background-color: transparent !important;
-    background: transparent !important;
+/* rounded dm icons with gold stitching */
+[class^="wrapper_"] [class^="avatar_"] {
+  border-radius: var(--rounded-pro) !important;
+  border: 2px solid var(--gold-seal);
 }
 
-/* --- 🫧 cute message bubbles --- */
-/* this makes messages look like little sticky notes */
+/* --- 🫧 cozy message bubbles --- */
 [class^="message_"] {
-    background-color: rgba(255, 255, 255, 0.4) !important;
-    border-radius: 15px;
-    margin-bottom: 5px;
-    border-left: 4px solid var(--gold-foil); /* A tiny gold strip on the side */
+  background: rgba(0, 0, 0, 0.03) !important; 
+  border-left: 5px solid var(--gold-seal); /* gold margin line like a notebook */
+  margin-bottom: 4px;
+  border-radius: 10px;
 }
 
-/* --- ⌨️ typing box --- */
-/* where the magic happens. i made it look soft! */
+/* --- ⌨️ the typing area (no white!) --- */
 [class^="channelTextArea_"] {
-    background-color: #ffffff !important;
-    border-radius: var(--rounded-corners);
-    border: 2px solid var(--gold-foil) !important; /* gold border for the gold typists */
+  background-color: var(--paper-side) !important;
+  border: 2px solid var(--ink-bold) !important;
+  border-radius: var(--rounded-pro) !important;
 }
 
-/* --- 🔤 font palette --- */
-/* fixed the 'txt-ink' variable so it actually reads the brown color! */
-[class^="markup_"], [class^="contents_"] {
-    color: var(--txt-ink) !important;
-    font-weight: bold; /* comic sans looks pritti in bold! */
+/* --- 🖱️ gold scrollbar --- */
+::-webkit-scrollbar-thumb {
+  background-color: var(--gold-seal) !important;
+  border-radius: 10px;
 }
-
-/* --- 🏁 Black & White Character Accent --- */
-/* Your character is B&W, so let's make the Home button match! */
-[class^="childWrapper_"] svg {
-    color: #000000 !important;
-    filter: drop-shadow(0 0 2px #ffffff);
-}
-
-/* --- ✨ hover effects --- */
-/* when you hover over a channel, it turns gold */
-[class^="wrapper_"]:hover [class^="content_"] {
-    background-color: var(--gold-foil) !important;
-    color: white !important;
-}
-
-/* 🔧 modding tip :):
-   If it's STILL dark, go to Discord Settings -> Appearance 
-   and make sure "Light Mode" is selected. This theme is built 
-   to 'paint over' Light Mode way better than Dark Mode!
-
-*/
